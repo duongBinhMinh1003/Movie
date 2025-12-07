@@ -3,15 +3,16 @@ import { store } from "..";
 import { setLoadingOff, setLoadingOn } from "../redux/SpinnerSlice";
 
 // axios instance
-export let htpps = axios.create({
+export let https = axios.create({
    baseURL:"https://movienew.cybersoft.edu.vn",
     headers:{
-        TokenCybersoft : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA1OCIsIkhldEhhblN0cmluZyI6IjAyLzA2LzIwMjQiLCJIZXRIYW5UaW1lIjoiMTcxNzI4NjQwMDAwMCIsIm5iZiI6MTY5MDM5MDgwMCwiZXhwIjoxNzE3NDM0MDAwfQ.I_5jTmaP4oPXDl-5EqRjQqnodRT3qKLF9_hDUjhDwFQ",
-        Authorization:"bearer " + JSON.parse(localStorage.getItem("USER_INFO"))?.accessToken,
+        TokenCybersoft : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA2OCIsIkhldEhhblN0cmluZyI6IjE1LzAxLzIwMjUiLCJIZXRIYW5UaW1lIjoiMTczNjg5OTIwMDAwMCIsIm5iZiI6MTcwOTEzOTYwMCwiZXhwIjoxNzM3MDQ2ODAwfQ.15h8Zu___NIMHyUdFGA_OXmW8LeIiC8dEKnAv1v362Q",
+        Authorization:"Bearer " + JSON.parse(localStorage.getItem("USER_INFO"))?.accessToken,
+       
       },
 });
 // Add a request interceptor
-htpps.interceptors.request.use(function (config) {
+https.interceptors.request.use(function (config) {
    store.dispatch(setLoadingOn())
   // Do something before request is sent
   return config;
@@ -21,7 +22,7 @@ htpps.interceptors.request.use(function (config) {
 });
 
 // Add a response interceptor
-htpps.interceptors.response.use(function (response) {
+https.interceptors.response.use(function (response) {
   store.dispatch(setLoadingOff())
   // Any status code that lie within the range of 2xx cause this function to trigger
   // Do something with response data

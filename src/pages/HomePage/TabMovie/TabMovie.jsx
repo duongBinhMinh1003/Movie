@@ -1,6 +1,6 @@
 import { Tabs } from 'antd';
 import React, { useEffect, useState } from 'react'
-import { htpps } from '../../../service/api'
+import { https } from '../../../service/api'
 import List from './List';
 
 export default function TabMovie() {
@@ -14,10 +14,10 @@ export default function TabMovie() {
     
     
     useEffect(()=>{
-        htpps
+        https
         .get(`/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP01`)
         .then((res) =>  {
-                console.log(res);
+                // console.log(res);
                 setDsHeThongRap(res.data.content)
               })
               .catch(function(err)  {
@@ -25,7 +25,7 @@ export default function TabMovie() {
               });
     },[])
     const onChange = (key) => {
-        console.log(key);
+        // console.log(key);
       };
       
     //   const items = [
@@ -38,11 +38,11 @@ export default function TabMovie() {
     //   ];
     const items = dsHeThongRap.map((heThongRap)=>{
         return {
-            key : heThongRap.tenHeThongRap,
+            key : heThongRap.maHeThongRap,
             label: <img className='w-16' src={heThongRap.logo} alt="" />,
-            children:<Tabs style={{ height: 600 }}  tabPosition='left' items={heThongRap.lstCumRap.map((cumRap)=>{
+            children:<Tabs style={{ height: 400 }}  tabPosition='left' items={heThongRap.lstCumRap.map((cumRap)=>{
                 return {
-                    key:cumRap.tenCumRap,
+                    key:cumRap.maCumRap,
                     label:<div className='text-left w-64 truncate'><h2 className='font-medium'> {cumRap.tenCumRap} </h2>
                                 <p>{cumRap.diaChi}</p>
                     </div>,
@@ -52,8 +52,8 @@ export default function TabMovie() {
         }
     })
   return (
-    <div>
-         <Tabs   style={{ height: 600 }} tabPosition='left' defaultActiveKey="1" items={items} onChange={onChange} />
+    <div className='flex justify-center items-center  grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5'>
+         <Tabs   style={{ height: 400 }} tabPosition='left' defaultActiveKey="1" items={items} onChange={onChange} />
     </div>
   )
 }

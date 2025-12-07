@@ -1,37 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Checkbox, Form, Input, message } from "antd";
 import { https } from "../../service/api";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../redux/userSlice";
 import Header from "../../component/header/Header";
 import Swal from "sweettoast.error2";
-const FormLogin = () => {
-  let navigate = useNavigate();
-  let dispatch = useDispatch();
 
+const RegisterForm = () => {
   const onFinish = (values) => {
-    https
-      .post("/api/QuanLyNguoiDung/DangNhap", values)
-      .then((res) => {
-        navigate("/");
-        message.success("Đăng nhập thành công!");
+    if (values.matKhau !== values.rematKhau) {
+      message.error("Passwords do not match");
+      return;
+    }
 
-        dispatch(setUser(res.data.content));
-        // luu data xuong local Storage
-        let dataJson = JSON.stringify(res.data.content); // Fix typo here
-        localStorage.setItem("USER_INFO", dataJson);
-        console.log(res);
+    https
+      .post("/api/QuanLyNguoiDung/DangKy", values)
+      .then((res) => {
+        Swal.fire({
+          title: "Đăng kí thành công!",
+          icon: "success",
+        });
       })
-      .catch(function (err) {
+      .catch((err) => {
         console.log(err);
-        message.error("Tài khoản hoặc mật khẩu không chính xác!");
+        message.error("Tài khoản đã tồn tại");
       });
   };
-
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
   return (
     <>
       <Header></Header>
@@ -48,7 +45,7 @@ const FormLogin = () => {
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
               </svg>
             </div>
-            <h1 class="MuiTypography-root MuiTypography-h1">Đăng nhập</h1>
+            <h1 class="MuiTypography-root MuiTypography-h1">Đăng Kí</h1>
             <Form
               className="jss17"
               name="basic"
@@ -76,7 +73,57 @@ const FormLogin = () => {
                   rules={[
                     {
                       required: true,
-                      message: "Please input your username!",
+                      message: "Đây là trường bắt buộc!",
+                    },
+                  ]}
+                >
+                  <Input />
+                </Form.Item>
+                <Form.Item
+                  label="Mật khẩu"
+                  name="matKhau"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Đây là trường bắt buộc!",
+                    },
+                  ]}
+                >
+                  <Input.Password />
+                </Form.Item>
+
+                <Form.Item
+                  label="Nhập lại  mật khẩu"
+                  name="rematKhau"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Đây là trường bắt buộc!",
+                    },
+                  ]}
+                >
+                  <Input.Password />
+                </Form.Item>
+
+                <Form.Item
+                  label="Email"
+                  name="email"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Đây là trường bắt buộc!",
+                    },
+                  ]}
+                >
+                  <Input />
+                </Form.Item>
+                <Form.Item
+                  label="Số điện thoai"
+                  name="soDt"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Đây là trường bắt buộc!",
                     },
                   ]}
                 >
@@ -84,28 +131,17 @@ const FormLogin = () => {
                 </Form.Item>
 
                 <Form.Item
-                  label="Mật khẩu"
-                  name="matKhau"
+                  label="Họ tên"
+                  name="hoTen"
                   rules={[
                     {
                       required: true,
-                      message: "Please input your password!",
+                      message: "Đây là trường bắt buộc!",
                     },
                   ]}
                 >
-                  <Input.Password />
+                  <Input />
                 </Form.Item>
-                <Form.Item
-                  name="remember"
-                  valuePropName="checked"
-                  wrapperCol={{
-                    offset: 0,
-                    span: 16,
-                  }}
-                >
-                  <Checkbox>Nhớ tài khoản</Checkbox>
-                </Form.Item>
-
                 <Form.Item
                   wrapperCol={{
                     offset: 0,
@@ -113,15 +149,15 @@ const FormLogin = () => {
                   }}
                 >
                   <Button className="bg-orange-400" htmlType="submit">
-                    ĐĂNG NHẬP
+                    ĐĂNG KÍ
                   </Button>
                 </Form.Item>
               </div>
               <div class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-flex-end justify-end">
                 <div class="MuiGrid-root MuiGrid-item justify-end">
-                  <NavLink to={"/register"}>
+                  <NavLink to={"/login"}>
                     <h3 class="MuiTypography-root MuiTypography-h3 float-right">
-                      Bạn chưa có tài khoản? Đăng ký
+                      Bạn đã có tài khoản? Đăng nhập
                     </h3>
                   </NavLink>
                 </div>
@@ -133,4 +169,4 @@ const FormLogin = () => {
     </>
   );
 };
-export default FormLogin;
+export default RegisterForm;

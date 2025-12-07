@@ -4,7 +4,7 @@ import { PacmanLoader } from "react-spinners";
 
 export default function Spinner() {
   let { isLoading } = useSelector((state) => state.spinnerSlice);
-  return isLoading ? (
+  return isLoading == true ? (
     <div
       style={{
         width: "100vw",

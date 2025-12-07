@@ -1,3 +1,506 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:where(.css-dev-only-do-not-override-p7e5j5).ant-carousel .slick-dots li.slick-active button{
+    background: rgb(251, 66, 38) ;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-carousel .slick-dots li button {
+    height: 13.35px;
+    width: 13.35px;
+    border-radius: 50%;
+   
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-carousel .slick-dots li.slick-active {
+    width: 16px;
+  
+   
+}
+/* :where(.css-dev-only-do-not-override-p7e5j5).ant-carousel .slick-dots li button {
+    color: rgb(251, 66, 38);
+} */
+
+:where(.css-dev-only-do-not-override-p7e5j5).ant-carousel .slick-dots li button::after {
+    width: 13.35px;
+    height: 13.35px;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-carousel .slick-dots li button:hover{
+    background-color: #1f1f1f;
+}
+/*  */
+.jss155 {
+    color: #9e9e9e;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+   
+  }
+  .arrow{
+
+    display: flex;
+  }
+  
+  /* form login */
+  /* .jss14 {
+    padding: 32px;
+    background: url(../build/netflix_29.png);
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-repeat: repeat;
+      background-size: auto;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  } */
+ 
+  .jss19 {
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  @media (min-width: 0px) {
+    .MuiContainer-maxWidthXs {
+      max-width: 444px;
+    }
+  }
+  @media (min-width: 600px) {
+    .MuiContainer-root {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+  .MuiContainer-root {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+  
+  
+  
+.jss15 {
+    margin: 32px 0px;
+    display: flex;
+    padding: 16px 0px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .jss16 {
+    margin: 8px;
+    background-color: #fb4226;
+  }
+  .MuiAvatar-colorDefault {
+    color: #fafafa;
+    background-color: #bdbdbd;
+  }
+  .MuiAvatar-root {
+    background-color: #fb4226;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.25rem;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1;
+    border-radius: 50%;
+    justify-content: center;
+    -moz-user-select: none;
+  }
+  .MuiAvatar-fallback {
+    width: 75%;
+    height: 75%;
+  }
+  .MuiSvgIcon-roott {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    -moz-user-select: none;
+    margin-right: 8px;
+  }
+  .MuiSvgIcon-root {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    -moz-user-select: none;
+   
+  }
+  
+  .MuiTypography-h1 {
+    font-size: 20px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.167;
+    letter-spacing: -0.01562em;
+  }
+  .MuiTypography-root {
+    margin: 0;
+  }
+  .jss17 {
+    width: 100%;
+    margin-top: 8px;
+  }
+  .MuiFormControl-fullWidth {
+    width: 100%;
+  }
+  .MuiFormControl-marginNormal {
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  .MuiFormControl-root {
+    border: 0;
+    margin: 0;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
+  }
+  
+  
+  
+  
+  .ant-btn.css-dev-only-do-not-override-p7e5j5.ant-btn-default.bg-orange-400{
+    width: 100%;
+    padding-right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  :where(.css-dev-only-do-not-override-p7e5j5).ant-col-16 {
+    --ant-display: block;
+    display: block;
+    display: var(--ant-display);
+    flex: 0 0 66.66666666666666%;
+      flex-grow: 0;
+    max-width: 100%;
+  }
+  .ant-btn.css-dev-only-do-not-override-p7e5j5.ant-btn-default.bg-orange-400 {
+    width: 100%;
+    padding-right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  :where(.css-dev-only-do-not-override-p7e5j5).ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #fb4226;
+    border-color: #fb4226;
+  }
+  :where(.css-dev-only-do-not-override-p7e5j5).ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-checked:not(.ant-checkbox-disabled) .ant-checkbox-inner{
+    background-color: #fb4226;
+    border-color: #fb4226;
+  }
+  :where(.css-dev-only-do-not-override-p7e5j5).ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-inner, :where(.css-dev-only-do-not-override-p7e5j5).ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+    border-color: #fb4226;
+  }
+  .bg-orange-400 {
+    --tw-bg-opacity: 1;
+    
+    background-color: #fb4226;
+  }
+  .bg-orange-400:hover{
+    background-color: rgb(175, 46, 26);
+  }
+  :where(.css-dev-only-do-not-override-p7e5j5).ant-btn > span{
+    color: white;
+  }
+  :where(.css-dev-only-do-not-override-p7e5j5).ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    color: none;
+    border-color: white;
+  }
+  .MuiGrid-justify-xs-flex-end {
+    justify-content: flex-end;
+  }
+  .bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255,255,255,.95);
+}
+.dangki,
+.dangnhap{
+  color: #9e9e9e;
+  font-size: 16px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.167;
+  letter-spacing: 0em;
+}
+
+.avatar-user{
+  width: 32px;
+  height: 32px;
+  margin: 0px 8px;
+  color: #fb4226;
+}
+
+.btn-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.space-x-5{
+  display: flex;
+  margin: 22px;
+}
+.jss1003:hover{
+  cursor: pointer;
+  color: #fb4226;
+}
+.dangnhap:hover,
+.dangki:hover{
+  color: #fb4226;
+}
+/* banner */
+
+
+/* Banner.css */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+:where(.css-dev-only-do-not-override-p7e5j5) a:hover {
+  opacity: 0.9;
+}
+:where(.css-dev-only-do-not-override-p7e5j5) a:hover {
+  color: #fff;
+}
+.border-black {
+  
+  border-color:rgba(0, 0, 0, 0.12);
+ border-right-width: 1px;
+padding-right: 20px;
+}
+.user-show span,
+.user-show button
+{
+  color: #9e9e9e;
+  font-size: 16px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.167;
+  letter-spacing: 0em;
+}
+.rounded.px-5.py-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-logout:hover{
+  color: #fb4226;
+}
+.jss342 {
+  color: #9e9e9e;
+  border: 1px solid #e4e4e4;
+  cursor: pointer;
+  margin: 0px 16px 16px 0px;
+  padding: 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: rgba(246, 246, 246, 0.5);
+ 
+}
+.jss880 {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: center;
+}
+.jss882 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+color: #fd8b7a;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  font-size: 14px;
+  font-weight: 500;
+}
+.jss882:hover{
+  color: #fb4226;
+  font-weight: 700;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #fb4226;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-tabs .ant-tabs-tab:hover{
+  color: #fb4226;
+}
+.bg-red-600 {
+    --tw-bg-opacity: 1;
+    background-color: #f85137;
+}
+.ant-card-meta-title{
+  text-align: center;
+}
+.home-title {
+  background: url("../build/bg_h3_line.jpg") repeat-x scroll left center rgba(0, 0, 0, 0);
+  height: 60px;
+  text-align: center;
+  width: 100%;
+}
+.home-title h2 {
+  background: url("../build/h3_movie_selection.gif") no-repeat scroll center center / 406px 41px #FDFCF0;
+  display: inline-block;
+  width: 425px;
+  height: 61px;
+}
+.list-movie{
+  padding: 0px 150px;
+}
+.jss2004 {
+  background: url(..//build/back-news.b9861f84.png);
+    background-repeat: repeat;
+    background-size: auto;
+  margin-top: 30px;
+  padding-top: 120px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.jssa08{
+  color: #fb4226;
+  font-size: 16px;
+  font-weight: 700;
+  
+}
+.jss05{
+  background-color: rgba(246, 246, 246, 0.5);
+}
+.lg\:py-8 {
+  padding: 0px 200px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.bg-footer{
+  background-color: #212121;
+}
+.tix-footer{
+  display: flex;
+}
+.pic-footer{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.jss145 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.MuiGrid-grid-lg-8 {
+  line-height: 22px;
+}
+:where(.css-dev-only-do-not-override-p7e5j5) a:hover {
+  color: #fa381a;
+  font-weight: 700;
+}
+:where(.css-dev-only-do-not-override-p7e5j5) a:hover {
+ color: #fc3415;
+ font-weight: 700;
+}
+.jssa09 {
+  color: #bdbdbd;
+  font-size: 16px;
+  font-weight: 700;
+}
+.jssa00{
+  color: #212121;
+  font-size: 17px;
+  font-weight: 700;
+}
+.bg-detail{
+  position: relative;
+  background-color: rgb(10, 32, 41);
+ 
+
+}
+.tab-detail{
+  margin-top: 40px;
+
+  width: 56%;
+}
+.user-name span:hover{
+color: #fb4226;
+}
+
+.bg-profile{
+  padding: 32px;
+  background: url(../build/bg-info.jpg);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-size: auto;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-form-item .ant-form-item-control-input-content {
+  width: 444px;
+  flex: auto;
+  max-width: 100%;
+}
+.input-profile{
+  width: 100%;
+}
+.setting-profile h1{
+  font-weight: 600;
+  margin-bottom: 8px;
+font-size: 20px;
+}
+.setting-profile h4 {
+  font-size: 14px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.235;
+  letter-spacing: 0.00735em;
+}
+.MuiDivider-root {
+  border: none;
+  height: 1px;
+  margin: 12px;
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.btn-update-profile{
+  
+}
+
+.btn-updated{
+  color: white;
+  background-color: #fb4226;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  margin-left: 112px;
+}
+.btn-updated:hover{
+  background-color: rgb(175, 46, 26);
+}
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: #fb4226!important;
+  color: #fff;
+  font-size: 1em;
+}

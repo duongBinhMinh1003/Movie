@@ -8,12 +8,14 @@ import { configure } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
 import userSlice from './redux/userSlice';
 import SpinnerSlice from './redux/SpinnerSlice';
+import adminUserSlice from './redux/adminUserSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 export let store = configureStore({
   reducer:{
     userSlice : userSlice,
     spinnerSlice:SpinnerSlice,
+    adminUserSlice : adminUserSlice,
   },
 })
 root.render(

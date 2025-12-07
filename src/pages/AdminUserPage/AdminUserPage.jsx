@@ -1,22 +1,48 @@
 import React, { useEffect, useState } from "react";
-import { htpps } from "../../service/api";
+import { https } from "../../service/api";
 import { message, Space, Table, Tag } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUserListAction } from "../../redux/adminUserSlice";
 export default function AdminUserPage() {
   const [listUser, setListUser] = useState([]);
-  let fetchUserList = () => {
-    htpps
-      .get("/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP00")
-      .then((res) => {
-        console.log(res);
-        setListUser(res.data.content); // table antd
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const {users} = useSelector((state) => state.adminUserSlice)
+
+  
+  // let fetchUserList = () => {
+  //   https
+  //     .get("/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP00")
+  //     .then((res) => {
+  //       console.log(res);
+  //       setListUser(res.data.content); // table antd
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+  let fetchUserList = async () => {
+    try {
+      let res = await https.get("/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP00")
+      setListUser(res.data.content)
+    } catch (error) {
+      console.log('error: ', error);
+      
+    }
+    
+      // .then((res) => {
+      //   console.log(res);
+      //   setListUser(res.data.content); // table antd
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
   };
+
   useEffect(() => {
-    fetchUserList();
+   
+    dispatch(fetchUserListAction())
   }, []);
+  let dispatch = useDispatch()
+
   const columns = [
     {
       title: "Account",
@@ -63,21 +89,27 @@ export default function AdminUserPage() {
       },
     },
   ];
-  let handleDelete = (id) => {
-    htpps
-      .delete(`/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${id}`)
-      .then((res) => {
-        console.log(res);
-        fetchUserList();
-        message.success("success");
-      })
-      .catch((err) => {
-        message.error(err.response.data.content);
-      });
+  let handleDelete = async (id) => {
+    try {
+      await https.delete(`/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${id}`)
+      message.success("success");
+      dispatch(fetchUserListAction())
+    } catch (error) {
+      message.error(error.response.data.content);
+    }
+ 
+   // .then((res) => {
+      //   console.log(res);
+      //   fetchUserList();
+      //   message.success("success");
+      // })
+      // .catch((err) => {
+      //   message.error(err.response.data.content);
+      // });
   };
   return (
     <div>
-      <Table columns={columns} dataSource={listUser} />
+      <Table columns={columns} dataSource={users} />
     </div>
   );
 }

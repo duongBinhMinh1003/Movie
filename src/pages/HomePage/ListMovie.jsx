@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { htpps } from '../../service/api'
+import { https } from '../../service/api'
 import { Card } from 'antd';
 import { Tooltip } from 'antd';
 import { NavLink } from 'react-router-dom';
@@ -7,10 +7,10 @@ const { Meta } = Card;
 export default function ListMovie() {
     const [movieArr,setMovieArr] = useState([]);
  useEffect(()=>{
-htpps
+https
 .get("/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01")
 .then((res) => {
-        console.log(res);
+        console.log(res.data.content);
         setMovieArr(res.data.content)
       })
       .catch(function(err)  {
@@ -18,7 +18,7 @@ htpps
       });
  },[])
     return (
-    <div className='grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-5'>{movieArr.slice(0, 20).map((item) => { 
+    <div className='grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-5 list-movie'>{movieArr.slice(0, 20).map((item) => { 
         return (
             <Card
             key={item.maPhim}
